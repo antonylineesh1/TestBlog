@@ -11,6 +11,7 @@ using System;
 using System.Text;
 using TestBlog.Configuration;
 using TestBlog.Repository.Data;
+using TestBlog.Repository.Operations;
 
 namespace TestBlog
 {
@@ -56,7 +57,7 @@ namespace TestBlog
                         ClockSkew = TimeSpan.Zero 
                         };
                 });
-
+            services.AddScoped<IBlogRepository, BlogRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

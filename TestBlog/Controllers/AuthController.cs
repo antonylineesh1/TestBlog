@@ -101,7 +101,9 @@ namespace TestBlog.Controllers
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, identityUser.UserName.ToString()),
-                    new Claim(ClaimTypes.Email, identityUser.Email)
+                    new Claim(ClaimTypes.Email, identityUser.Email),
+                    new Claim(ClaimTypes.NameIdentifier, identityUser.Id)
+
                 }),
 
                 Expires = DateTime.UtcNow.AddSeconds(jwtBearerTokenSettings.ExpiryTimeInSeconds),
